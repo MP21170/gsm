@@ -16,9 +16,9 @@ class WindowSettings:
     title: str = "UPU"
 
     top: int = 0
-    left: int = 1912  # 1912
+    left: int = 1412  # Écran : 1 → 1412 | 2 → 1912
 
-    width: int = 500
+    width: int = 516
     height: int | None = None
 
     resizable: bool = True
