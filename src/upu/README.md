@@ -1,5 +1,7 @@
 # UPU
 
+En travaux → branche declarative
+
 ## Flux
 
 ### Simplifié
