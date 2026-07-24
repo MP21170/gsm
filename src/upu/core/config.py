@@ -1,0 +1,46 @@
+# src/upu/core/config.py
+
+from dataclasses import dataclass, field
+import flet as ft
+
+
+@dataclass
+class WindowSettings:
+    title: str = "UPU"
+
+    top: int = 0
+    left: int = 1912  # 1912
+
+    width: int = 500
+    height: int | None = None
+
+    resizable: bool = True
+
+    def __post_init__(self):
+        if self.height is None:
+            self.height = 1088 if self.left >= 1912 else 1040
+
+    def apply(self, page: ft.Page):
+        page.title = self.title
+
+        page.window.top = self.top
+        page.window.left = self.left
+
+        page.window.width = self.width
+        page.window.height = self.height
+
+        page.window.resizable = self.resizable
+
+        # page.run_task(page.window.to_front) # ← Pour donner le focus à l'App
+
+        page.update()
+
+
+@dataclass
+class AppSettings:
+
+    name: str = "UPU"
+    window: WindowSettings = field(default_factory=WindowSettings)
+
+
+settings = AppSettings()
