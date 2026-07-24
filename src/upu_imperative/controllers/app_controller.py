@@ -7,9 +7,9 @@ import flet as ft
 import gc7_tools.screen_utils as screen_utils
 
 from upu.config import APP_NAME, VERSION, WINDOW_LEFT, DEFAULT_ROUTE
-from upu.controllers.settings_controller import SettingsController
-from upu.controllers.update_controller import UpdateController
-from upu.controllers.navigation_controller import NavigationController
+from upu.bootstrap.settings_controller import SettingsController
+from upu.bootstrap.update_controller import UpdateController
+from upu.bootstrap.navigation_controller import NavigationController
 
 
 class AppController:
