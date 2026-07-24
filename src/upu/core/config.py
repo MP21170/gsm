@@ -1,5 +1,12 @@
 # src/upu/core/config.py
 
+# * clés API
+# * constantes métier
+# * options de services
+# * paramètres de scraping
+# * chemins personnalisés
+# * règles internes
+
 from dataclasses import dataclass, field
 import flet as ft
 
@@ -32,7 +39,10 @@ class WindowSettings:
         page.window.resizable = self.resizable
 
         # page.run_task(page.window.to_front) # ← Pour donner le focus à l'App
-
+        # import inspect
+        # print(inspect.iscoroutinefunction(ft.Window.to_front))
+        # print(inspect.signature(ft.Window.to_front))
+            
         page.update()
 
 

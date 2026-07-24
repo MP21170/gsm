@@ -107,3 +107,32 @@ src/
         ├── header.py
         └── sidebar.py
 ```
+
+## Mémo
+
+### config.py VS settings.py
+
+    config.py :
+
+* clés API
+* constantes métier
+* options de services
+* paramètres de scraping
+* chemins personnalisés
+* règles internes
+
+VS
+
+     settings.py :
+
+* configuration de la base de données
+* middleware
+* applications installées
+* routes statiques
+* sécurité
+* internationalisation
+* logs
+* templates
+* cache
+* email
+* etc.

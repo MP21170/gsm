@@ -24,10 +24,7 @@ class AppBootstrap:
         self.setup()
 
     def setup(self):
-        import inspect
         
-        print(inspect.iscoroutinefunction(ft.Window.to_front))
-        print(inspect.signature(ft.Window.to_front))
         # self.page.theme = self.config.theme
         # self.page.window.to_front()
 

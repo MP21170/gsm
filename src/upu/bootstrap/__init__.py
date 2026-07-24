@@ -1,1 +1,1 @@
-"""Up U! controllers."""
+"""Up U! bootstrap."""
