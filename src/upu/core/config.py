@@ -42,7 +42,7 @@ class WindowSettings:
         # import inspect
         # print(inspect.iscoroutinefunction(ft.Window.to_front))
         # print(inspect.signature(ft.Window.to_front))
-            
+
         page.update()
 
 
@@ -54,3 +54,14 @@ class AppSettings:
 
 
 settings = AppSettings()
+
+
+if __name__ == "__main__":
+    import flet as ft
+    import subprocess
+
+    def main(page: ft.Page):
+        settings.window.apply(page)
+
+    # subprocess.run(["flet", "run", "src/upu/helpers/uuu.py"])
+    print("oki 21")
