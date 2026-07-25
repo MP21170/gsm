@@ -1,7 +1,5 @@
 # src/main.py
-
 import flet as ft
+from upu.bootstrap.setup import Setup
 
-from upu.bootstrap.app_bootstrap import AppBootstrap
-
-ft.run(AppBootstrap)
+ft.run(Setup)

@@ -1,10 +1,10 @@
-# src/upu/views/simple_declarative_counter.py
+# src/upu/views/pages/counter.py
 import flet as ft
 
-@ft.component
-def Counter():
-    count, set_count = ft.use_state(0)
 
+@ft.component
+def Counter(): # Simple declarative counter
+    count, set_count = ft.use_state(0)
     return ft.Row(
         alignment=ft.MainAxisAlignment.CENTER,
         controls=[
@@ -25,11 +25,10 @@ def Counter():
         ],
     )
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     def main(page: ft.Page):
         page.title = "Flet counter example"
         page.vertical_alignment = ft.MainAxisAlignment.CENTER
         page.render(Counter)
-
     ft.run(main)

@@ -4,6 +4,21 @@ En travaux → branche declarative
 
 ## Flux
 
+### Dossiers/fichiers principaux
+
+bootstrap/ = initialisation
+
+core/ = fondations de l’app
+
+- config.py = params
+- router.py = navigation, logique centrale
+
+layouts/ = structure visuelle - Templates
+
+views/ = écrans
+
+app.py = assemblage déclaratif
+
 ### Simplifié
 
 ```bash

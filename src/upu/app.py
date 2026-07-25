@@ -1,11 +1,15 @@
 # src/upu/app.py
-
 import flet as ft
+from upu.layouts.main_layout import MainLayout
 
-# from upu.layouts.main_layout import MainLayout
-from upu.views.simple_declarative_counter import Counter
+def App(page):
+    current_view = page.views[-1]
+    return MainLayout()(current_view)
 
-@ft.component
-def App():
+# class App:
+#     def __call__(self, page):
+#         # La vue courante est celle que le router a mise dans page.views[-1]
+#         current_view = page.views[-1]
 
-    return Counter()
+#         # On enveloppe la vue dans le layout global
+#         return MainLayout(current_view)
