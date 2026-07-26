@@ -129,27 +129,33 @@ src/
 
 ### config.py VS settings.py
 
-    config.py :
+config.py :
 
-* clés API
-* constantes métier
-* options de services
-* paramètres de scraping
-* chemins personnalisés
-* règles internes
+- clés API
+- constantes métier
+- options de services
+- paramètres de scraping
+- chemins personnalisés
+- règles internes
 
 VS
 
-     settings.py :
+settings.py :
 
-* configuration de la base de données
-* middleware
-* applications installées
-* routes statiques
-* sécurité
-* internationalisation
-* logs
-* templates
-* cache
-* email
-* etc.
+- configuration de la base de données
+- middleware
+- applications installées
+- routes statiques
+- sécurité
+- internationalisation
+- logs
+- templates
+- cache
+- email
+- etc.
+
+### Pour un lancement direct d'un fichier
+
+```bash
+pip install -e . 
+```

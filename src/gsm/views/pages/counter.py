@@ -1,9 +1,7 @@
 # src/gsm/views/pages/counter.py
 import flet as ft
-
 from gsm.state.counter_state import CounterState
-
-
+from typing import cast
 class CounterPage:
     """Page 'Compteur'."""
 
@@ -18,10 +16,7 @@ class CounterPage:
             except ValueError:
                 pass
 
-        # Annotation explicite indispensable : sans elle, Pylance infère
-        # list[IconButton | TextField] à partir des littéraux, non
-        # assignable à list[Control] (reportArgumentType).
-        controls: list[ft.Control] = [
+        controls: list[ft.IconButton | ft.TextField] = [
             ft.IconButton(
                 ft.Icons.REMOVE,
                 tooltip="Décrémenter",
@@ -39,11 +34,8 @@ class CounterPage:
                 on_click=lambda _: state.increment(),
             ),
         ]
-        return ft.Row(alignment=ft.MainAxisAlignment.CENTER, controls=controls)
-
-        # À retenir :
-        # list[ft.Control] explicite dès qu'une liste de contrôles mélange plusieurs types concrets.
-        # ft.Event[TonControlPrécis] (pas ft.ControlEvent) dès que tu écris une fonction nommée pour un handler, plutôt qu'une lambda.
+        return ft.Row(alignment=ft.MainAxisAlignment.
+                      CENTER, controls=cast(list[ft.Control], controls))
 
 if __name__ == "__main__":
 
