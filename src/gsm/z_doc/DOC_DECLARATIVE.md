@@ -1,4 +1,4 @@
-# gsm — squelette Flet déclaratif (0.85.3)
+# GSM — squelette Flet déclaratif (0.85.3)
 
 ## Lancer le projet
 

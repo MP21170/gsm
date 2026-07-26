@@ -68,6 +68,6 @@ if __name__ == "__main__":
     def main(page: ft.Page):
         page.title = "Flet counter example"
         page.vertical_alignment = ft.MainAxisAlignment.CENTER
-        page.render(Counter)
+        page.render(CounterPage.view)
 
     ft.run(main)

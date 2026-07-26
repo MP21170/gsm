@@ -3,7 +3,7 @@ import flet as ft
 
 from gsm.core.routes_registry import PAGES
 from gsm.layouts.main_layout import MainLayout
-from gsm.views.pages.p404 import NotFoundPage
+from gsm.views.pages.not_found import NotFoundPage
 
 
 class AppRouter:
@@ -48,7 +48,7 @@ class AppRouter:
     @staticmethod
     @ft.component
     def view() -> ft.Control:
-        return ft.SafeArea(content=ft.Router(AppRouter.routes()))
+        return ft.SafeArea(ft.Router(AppRouter.routes()))
 
 
 # ---------------------------------------------

@@ -27,7 +27,7 @@ class MainLayout:
                     ft.Row(
                         alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                         controls=[
-                            ft.Text("gsm", size=20, weight=ft.FontWeight.BOLD),
+                            ft.Text("GSM", size=20, weight=ft.FontWeight.BOLD),
                             NavBar.view(),
                         ],
                     ),

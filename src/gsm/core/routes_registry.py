@@ -21,6 +21,7 @@ import flet as ft
 
 from gsm.views.pages.about import AboutPage
 from gsm.views.pages.counter import CounterPage
+from gsm.views.pages.not_found import NotFoundPage
 
 
 @dataclass(frozen=True)
