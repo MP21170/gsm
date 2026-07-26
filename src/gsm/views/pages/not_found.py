@@ -1,6 +1,4 @@
 # src/gsm/views/pages/p404.py
-from __future__ import annotations
-
 import flet as ft
 
 
