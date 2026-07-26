@@ -1,6 +1,6 @@
 # src/gsm/views/pages/counter.py
 import flet as ft
-from gsm.state.counter_state import CounterState
+from gsm.states.counter_state import CounterState
 from typing import cast
 class CounterPage:
     """Page 'Compteur'."""
