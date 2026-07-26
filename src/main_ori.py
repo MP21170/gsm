@@ -1,7 +1,7 @@
 import os
 import flet as ft
 
-# from upu.controllers.app_controller import create_app
+# from gsm.controllers.app_controller import create_app
 
 # RUNNING_IN_DOCKER = os.environ.get("FLET_DOCKER", "0") == "1"
 

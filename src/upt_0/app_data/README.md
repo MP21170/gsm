@@ -17,7 +17,7 @@ Notes:
 
 - Ce fichier decrit ce qui est embarque localement avec l'application.
 - Il ne doit pas contenir le cache de la derniere release GitHub connue.
-- src/upu/services/state_repository.py le charge pour exposer les metadonnees
+- src/gsm/services/state_repository.py le charge pour exposer les metadonnees
     de build au reste du code.
 - Si une cle obligatoire manque ou est invalide,
   l'application leve une erreur au démarrage.
@@ -36,7 +36,7 @@ Notes:
 
 - Ce fichier contient les informations apprises ou mises en cache a l'execution.
 - Le cache de release GitHub y est stocke separement de la version locale installee.
-- src/upu/services/state_repository.py centralise les acces lecture/ecriture.
+- src/gsm/services/state_repository.py centralise les acces lecture/ecriture.
 
 ## Regle de separation
 

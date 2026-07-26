@@ -6,8 +6,8 @@ try:
 except Exception:  # noqa: BLE001
     EmbeddedWebView = None
 
-from upu.helpers.app_actions import open_url
-from upu.views.templates.default import named_view
+from gsm.helpers.app_actions import open_url
+from gsm.views.templates.default import named_view
 
 COTE_URL = "https://cote7.com"
 

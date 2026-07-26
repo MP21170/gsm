@@ -1,5 +1,5 @@
-from upu.models.habit import Habit
-from upu.services.db_service import DBService
+from gsm.models.habit import Habit
+from gsm.services.db_service import DBService
 
 
 class HabitService:

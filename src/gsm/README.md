@@ -1,4 +1,4 @@
-# UPU
+# gsm
 
 En travaux → branche declarative
 
@@ -50,7 +50,7 @@ src/main.py
 ft.run(AppBootstrap)
         |
         v
-upu/bootstrap/app_bootstrap.py
+gsm/bootstrap/app_bootstrap.py
 
         |
         +--> charge Config
@@ -66,7 +66,7 @@ upu/bootstrap/app_bootstrap.py
         |
         v
 
-upu/app.py
+gsm/app.py
 
         |
         v
@@ -92,7 +92,7 @@ src/
 │
 ├── main.py                    # Entry point Flet
 │
-└── upu/
+└── gsm/
     │
     ├── app.py                 # Racine déclarative de l'application
     │

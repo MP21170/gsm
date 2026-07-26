@@ -80,7 +80,7 @@ docker compose down
 #### Fixer la page d'accueil
 
 ```bash
-C:\gsm\src\upu\config.py
+C:\gsm\src\gsm\config.py
 # DEFAULT_ROUTE = ...
 ```
 
@@ -142,7 +142,7 @@ Lancer le build APK pour construire l'app pour ton mobile ou tablette **Androïd
 ```
 
 (Sinon, ouvre cette page avec ton appareil mobile et télech directement :
-  **https://github.com/GrCOTE7/gsm/releases** - La der version, le lien **Upu.apk**)
+  **https://github.com/GrCOTE7/gsm/releases** - La der version, le lien **gsm.apk**)
 
 ## 🐍 Lancer un script Python avec HOT-RELOAD
 
@@ -355,22 +355,22 @@ entre les <> versions.
 * 1 Générer le keystore une seule fois (à faire localement, une seule fois) :
 
 ```bash
-& "C:\Program Files\Java\jdk-21\bin\keytool.exe" -genkeypair -v -keystore upu-release.keystore -alias upu-key -keyalg RSA -keysize 2048 -validity 10000
+& "C:\Program Files\Java\jdk-21\bin\keytool.exe" -genkeypair -v -keystore gsm-release.keystore -alias gsm-key -keyalg RSA -keysize 2048 -validity 10000
 
 ```
 
 ou
 
 ```bash
-keytool -genkey -v -keystore upu-release.keystore \ -alias upu-key -keyalg RSA -keysize 2048 -validity 10000
+keytool -genkey -v -keystore gsm-release.keystore \ -alias gsm-key -keyalg RSA -keysize 2048 -validity 10000
 ```
 
 ou
 
 ```bash
 keytool -genkeypair -v \
-  -keystore upu-release.keystore \
-  -alias upu \
+  -keystore gsm-release.keystore \
+  -alias gsm \
   -keyalg RSA -keysize 2048 -validity 10000
 ```
 
@@ -379,29 +379,29 @@ keytool -genkeypair -v \
 ## Linux / macOS
 
 ```bash
-base64 -w 0 upu-release.keystore
+base64 -w 0 gsm-release.keystore
 ```
 
 ## Windows PowerShell
 
 ```bash
-[Convert]::ToBase64String([IO.File]::ReadAllBytes("upu-release.keystore"))
+[Convert]::ToBase64String([IO.File]::ReadAllBytes("gsm-release.keystore"))
 ```
 
 Chemin complet car _ laisse croire à un scope
 
 ```bash
-[Convert]::ToBase64String([IO.File]::ReadAllBytes("D:\_gc\aGC7\Teck\upu-release.keystore")) > D:\_gc\aGC7\Teck\keystore.b64.txt
+[Convert]::ToBase64String([IO.File]::ReadAllBytes("D:\_gc\aGC7\Teck\gsm-release.keystore")) > D:\_gc\aGC7\Teck\keystore.b64.txt
 ```
 
 ```bash
-PS D:\_gc\aGC7\Teck> Get-ChildItem -Path D:\_gc -Filter upu-release.keystore -Recurse
+PS D:\_gc\aGC7\Teck> Get-ChildItem -Path D:\_gc -Filter gsm-release.keystore -Recurse
 
     Directory: D:\_gc\aGC7\Teck
 
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
--a---          13/05/2026    16:27           2730 upu-release.keystore
+-a---          13/05/2026    16:27           2730 gsm-release.keystore
 
 PS D:\_gc\aGC7\Teck> 
 ```
@@ -411,12 +411,12 @@ PS D:\_gc\aGC7\Teck>
 Secret                  Valeur
 ANDROID_KEYSTORE_B64    le base64 du .keystore
 ANDROID_STORE_PASSWORD  mot de passe du keystore
-ANDROID_KEY_ALIAS       ex. upu-key
+ANDROID_KEY_ALIAS       ex. gsm-key
 ANDROID_KEY_PASSWORD    mot de passe de la clé (Svt mme que STORE_PW)
 
 * [ ] Vérif la signature
 
-C:\Users\utilisateur\AppData\Local\Android\Sdk\build-tools\34.0.0\apksigner.bat verify --print-certs UpU.apk
+C:\Users\utilisateur\AppData\Local\Android\Sdk\build-tools\34.0.0\apksigner.bat verify --print-certs gsm.apk
 
 ---
 
@@ -432,9 +432,9 @@ uv run python -c "import flet; print(flet.__version__)"
 
 ### Debug / Iphone
 
-.\adb logcat | Select-String "com.mycompany.upu"
+.\adb logcat | Select-String "com.mycompany.gsm"
 
-.\adb logcat | Select-String "python" | Select-String "com.mycompany.upu"
+.\adb logcat | Select-String "python" | Select-String "com.mycompany.gsm"
 
 ### Debug android / PC → Android Studio
 

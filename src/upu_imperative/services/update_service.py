@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from upu.config import get_latest_release_info
-from upu.services.state_repository import get_last_check_at
+from gsm.config import get_latest_release_info
+from gsm.services.state_repository import get_last_check_at
 
 KEY_UPDATE_LAST_CHECK_AT = "update.last_check_at"
 KEY_UPDATE_LATEST_VERSION = "update.latest_version"

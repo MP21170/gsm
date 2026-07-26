@@ -6,10 +6,10 @@ from typing import cast
 import flet as ft
 import gc7_tools.screen_utils as screen_utils
 
-from upu.config import APP_NAME, VERSION, WINDOW_LEFT, DEFAULT_ROUTE
-from upu.bootstrap.settings_controller import SettingsController
-from upu.bootstrap.update_controller import UpdateController
-from upu.bootstrap.navigation_controller import NavigationController
+from gsm.config import APP_NAME, VERSION, WINDOW_LEFT, DEFAULT_ROUTE
+from gsm.bootstrap.settings_controller import SettingsController
+from gsm.bootstrap.update_controller import UpdateController
+from gsm.bootstrap.navigation_controller import NavigationController
 
 
 class AppController:

@@ -1,5 +1,5 @@
-from upu.models.habit import Habit
-from upu.services.habit_service import HabitService
+from gsm.models.habit import Habit
+from gsm.services.habit_service import HabitService
 
 
 class HabitController:

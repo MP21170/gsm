@@ -1,7 +1,7 @@
-from upu.views.pages.registry import get_view_builder, has_route
-from upu.ui.navigation import AppBar, Drawer
+from gsm.views.pages.registry import get_view_builder, has_route
+from gsm.ui.navigation import AppBar, Drawer
 import flet as ft
-from upu.config import APP_NAME, DEFAULT_ROUTE
+from gsm.config import APP_NAME, DEFAULT_ROUTE
 
 
 class NavigationController:

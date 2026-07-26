@@ -4,10 +4,10 @@ from pathlib import Path
 from typing import cast
 
 import flet as ft
-from upu.services.release_service import get_update_log_path, open_release_url
-from upu.config import is_update_available, get_latest_release_info
-from upu.helpers.buttons import filled_button
-from upu.helpers.snackbar import show_snackbar
+from gsm.services.release_service import get_update_log_path, open_release_url
+from gsm.config import is_update_available, get_latest_release_info
+from gsm.helpers.buttons import filled_button
+from gsm.helpers.snackbar import show_snackbar
 import subprocess
 
 

@@ -1,5 +1,6 @@
 import os
 
+
 def switch(choice):
 
     def action_a():
@@ -22,12 +23,10 @@ def switch(choice):
 if __name__ == "__main__":
     # print('Flet is' , ('running' if os.environ.get("FLET_RUNNING") else 'not yet started'))
 
-    switch('a')
-    
-    
+    switch("a")
+
     if os.environ.get("FLET_RUNNING") != "1":
         import subprocess
 
         os.environ["FLET_RUNNING"] = "1"
-        subprocess.run(["flet", "run", "src/upu/helpers/quick_test.py"])
-
+        subprocess.run(["flet", "run", "src/gsm/helpers/quick_test.py"])

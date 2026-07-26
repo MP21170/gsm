@@ -1,4 +1,4 @@
-# src/upu/core/config.py
+# src/gsm/core/config.py
 
 # * clés API
 # * constantes métier
@@ -15,11 +15,11 @@ from ..helpers.get_env import get_env
 
 @dataclass
 class WindowSettings:
-    title: str = "UPU"
+    title: str = "gsm"
 
     top: int = 0
     left: int = int(
-        str(get_env("UPU_WINDOW_LEFT", 1412))
+        str(get_env("gsm_WINDOW_LEFT", 1412))
     )  # 840 pour vidéo - 1412 pour un seul écran - Default: 1912 pour 2ème écran
 
     width: int = 516
@@ -66,7 +66,7 @@ class WindowSettings:
 @dataclass
 class AppSettings:
 
-    name: str = "UPU"
+    name: str = "gsm"
     window: WindowSettings = field(default_factory=WindowSettings)
 
 
@@ -80,4 +80,4 @@ if __name__ == "__main__":
         settings.window.apply(page)
 
     # import subprocess
-    # subprocess.run(["flet", "run", "src/upu/helpers/uuu.py"])
+    # subprocess.run(["flet", "run", "src/gsm/helpers/uuu.py"])

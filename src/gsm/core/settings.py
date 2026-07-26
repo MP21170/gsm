@@ -1,4 +1,4 @@
-# src/upu/core/settings.py
+# src/gsm/core/settings.py
 
 # * configuration de la base de données
 # * middleware
@@ -12,5 +12,5 @@
 # * email
 # * etc.
 
-    # AppSettings
-    # ThemeSettings
+# AppSettings
+# ThemeSettings

@@ -1,14 +1,14 @@
 import flet as ft
 
-from upu.views.templates.default import named_view
-from upu.views.footers.ready_more import ready_more
-from upu.helpers.app_actions import close_app, open_url
+from gsm.views.templates.default import named_view
+from gsm.views.footers.ready_more import ready_more
+from gsm.helpers.app_actions import close_app, open_url
 
 from gc7_tools.helpers import sepa, sepa_outlined
 
-from upu.guests import g260799_ as guest
+from gsm.guests import g260799_ as guest
 from typing import cast
-from upu.helpers.snackbar import show_snackbar
+from gsm.helpers.snackbar import show_snackbar
 
 
 # print(dir(page))

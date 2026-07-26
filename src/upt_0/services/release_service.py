@@ -5,8 +5,8 @@ import time
 import webbrowser
 
 import flet as ft
-from upu.config import CACHE_DELAY
-from upu.services import state_repository
+from gsm.config import CACHE_DELAY
+from gsm.services import state_repository
 
 _DATA_DIR = Path(__file__).resolve().parents[1] / "app_data"
 _APP_STATE_PATH = _DATA_DIR / "app_state.json"

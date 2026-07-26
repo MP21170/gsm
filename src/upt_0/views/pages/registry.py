@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 import flet as ft
 
-from upu.views.pages import (
+from gsm.views.pages import (
     calculator,
     counter,
     home,

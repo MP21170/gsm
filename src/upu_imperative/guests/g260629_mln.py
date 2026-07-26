@@ -2,7 +2,7 @@ import flet as ft
 from typing import Callable
 from gc7_tools.helpers import sepa, sepa_outlined
 
-from upu.guests import register
+from gsm.guests import register
 
 date = "26-06-29"
 guest = "mln.913"
@@ -12,7 +12,7 @@ url = "https://discord.com/channels/1056923339546968127/1075041467690664070/1521
 
 response = response if "response" in globals() else "En cours"  # type: ignore
 
-from upu.views.partials.test_guests_src import guest_source
+from gsm.views.partials.test_guests_src import guest_source
 
 S: str = 'abc'
 

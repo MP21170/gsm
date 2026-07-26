@@ -1,6 +1,6 @@
 import flet as ft
 
-from upu.views.templates.default import named_view
+from gsm.views.templates.default import named_view
 
 
 def build() -> ft.Control:

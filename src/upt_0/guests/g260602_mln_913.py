@@ -2,7 +2,7 @@ import flet as ft
 from typing import Callable
 from gc7_tools.helpers import sepa, sepa_outlined
 
-from upu.guests import register
+from gsm.guests import register
 
 # ❌ "26-05-30 nom → Thomas - Discord", https://discord.com/channels/1056923339546968127/1075041467690664070/1510251280176517230
 
@@ -20,7 +20,7 @@ response = response if 'response' in globals() else "En cours" # type: ignore
 trame = "0010101011001000010010001100011000101100"  # unvalid
 # Réf.: https://glassus.github.io/terminale_nsi/T6_6_Epreuve_pratique/data2026/26_BCG_NSI_23/sujet.pdf)
 
-from upu.views.partials.test_guests_src import guest_source
+from gsm.views.partials.test_guests_src import guest_source
 
 def is_valid_mln(trame: str) -> bool:
     compteur1 = 0

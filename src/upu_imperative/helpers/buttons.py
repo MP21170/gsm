@@ -1,6 +1,6 @@
 from __future__ import annotations
 import flet as ft
-from upu.helpers.app_actions import open_url
+from gsm.helpers.app_actions import open_url
 
 from typing import Any
 

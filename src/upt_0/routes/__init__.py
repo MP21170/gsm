@@ -1,4 +1,4 @@
-from upu.views.pages.registry import (
+from gsm.views.pages.registry import (
     DEFAULT_VIEW_BUILDER,
     ROUTES,
     RouteDefinition,

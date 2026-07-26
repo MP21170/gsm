@@ -15,4 +15,4 @@ RUN if [ -f requirements.txt ]; then \
 
 EXPOSE 8777
 
-CMD ["python", "-m", "src.upu.app"]
+CMD ["python", "-m", "src.gsm.app"]

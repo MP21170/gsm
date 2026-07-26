@@ -1,5 +1,21 @@
 # NewNRJ.com — MVP Habits & Energy App
 
+## Refactoring GSM project (not yet gsm) every where
+
+* [ ] .gh workflow (les 3)
+* [ ] doc/00000
+* [ ] doc/0103
+* [ ] 0108
+
+* [ ] scripts/
+* [ ] checkversion
+* [ ] qr
+* [ ] upload
+
+* [ ] src/
+
+* [ ] wikidoc → à la fin
+
 ## 📘 Mini Specifications — MVP NewNRJ
 
 ### .🎯 Mission
