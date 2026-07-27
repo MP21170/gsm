@@ -1,6 +1,4 @@
 # src/gsm/views/pages/counter.py
-from typing import cast
-
 import flet as ft
 
 from gsm.states.counter_state import CounterState
@@ -73,7 +71,7 @@ class CounterPage:
             animate=ft.Animation(300, ft.AnimationCurve.EASE_IN_OUT),
         )
 
-        editable_controls: list[ft.IconButton | ft.Container] = [
+        editable_controls: list[ft.Control] = [
             ft.IconButton(
                 ft.Icons.REMOVE,
                 tooltip="Décrémenter",
@@ -88,7 +86,7 @@ class CounterPage:
         ]
         editable_row = ft.Row(
             alignment=ft.MainAxisAlignment.CENTER,
-            controls=cast(list[ft.Control], editable_controls),
+            controls=editable_controls,
         )
 
         # --- Version 2 : lecture seule, texte avec un vrai fondu --------
@@ -110,16 +108,13 @@ class CounterPage:
 
         return ft.Column(
             horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-            controls=cast(
-                list[ft.Control],
-                [
-                    CounterPage.transitionedBtn(),
-                    ft.Divider(),
-                    editable_row,
-                    ft.Divider(),
-                    faded_display,
-                ],
-            ),
+            controls=[
+                CounterPage.transitionedBtn(),
+                ft.Divider(),
+                editable_row,
+                ft.Divider(),
+                faded_display,
+            ],
         )
 
 
