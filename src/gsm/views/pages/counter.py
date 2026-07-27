@@ -16,18 +16,31 @@ class CounterPage:
             except ValueError:
                 pass
 
-        controls: list[ft.IconButton | ft.TextField] = [
+        # Cadre autour du champ de valeur, dont la couleur dépend de la parité — recalculé à chaque rendu à partir de `state.is_even`,
+        # sans état séparé : c'est une valeur dérivée, pas une donnée.
+        value_field = ft.Container(
+            content=ft.TextField(
+                value=str(state.value),
+                width=70,
+                text_align=ft.TextAlign.CENTER,
+                on_change=handle_change,
+            ),
+            padding=-10,
+            border_radius=7,
+            border=ft.Border.all(
+                2,
+                ft.Colors.GREEN if state.is_even else ft.Colors.DEEP_ORANGE,
+            ),
+            animate=ft.Animation(300, ft.AnimationCurve.EASE_IN_OUT),
+        )
+
+        controls: list[ft.IconButton | ft.Container] = [
             ft.IconButton(
                 ft.Icons.REMOVE,
                 tooltip="Décrémenter",
                 on_click=lambda _: state.decrement(),
             ),
-            ft.TextField(
-                value=str(state.value),
-                width=100,
-                text_align=ft.TextAlign.CENTER,
-                on_change=handle_change,
-            ),
+            value_field,
             ft.IconButton(
                 ft.Icons.ADD,
                 tooltip="Incrémenter",

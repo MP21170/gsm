@@ -17,3 +17,7 @@ class CounterState:
 
     def set_value(self, value: int) -> None:
         self.value = value
+
+    @property
+    def is_even(self) -> bool:
+        return self.value % 2 == 0
