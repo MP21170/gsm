@@ -1,7 +1,11 @@
 # src/gsm/views/pages/counter.py
-import flet as ft
-from gsm.states.counter_state import CounterState
 from typing import cast
+
+import flet as ft
+
+from gsm.states.counter_state import CounterState
+
+
 class CounterPage:
     """Page 'Compteur'."""
 
@@ -16,25 +20,23 @@ class CounterPage:
             except ValueError:
                 pass
 
-        # Cadre autour du champ de valeur, dont la couleur dépend de la parité — recalculé à chaque rendu à partir de `state.is_even`,
-        # sans état séparé : c'est une valeur dérivée, pas une donnée.
+        text_color = ft.Colors.GREEN if state.is_even else ft.Colors.DEEP_ORANGE
+
+        # --- Version 1 : champ éditable, cadre animé (inchangée) --------
         value_field = ft.Container(
             content=ft.TextField(
                 value=str(state.value),
-                width=70,
+                width=100,
                 text_align=ft.TextAlign.CENTER,
                 on_change=handle_change,
             ),
-            padding=-10,
-            border_radius=7,
-            border=ft.Border.all(
-                2,
-                ft.Colors.GREEN if state.is_even else ft.Colors.DEEP_ORANGE,
-            ),
+            padding=6,
+            border_radius=8,
+            border=ft.Border.all(2, text_color),
             animate=ft.Animation(300, ft.AnimationCurve.EASE_IN_OUT),
         )
 
-        controls: list[ft.IconButton | ft.Container] = [
+        editable_controls: list[ft.IconButton | ft.Container] = [
             ft.IconButton(
                 ft.Icons.REMOVE,
                 tooltip="Décrémenter",
@@ -47,8 +49,36 @@ class CounterPage:
                 on_click=lambda _: state.increment(),
             ),
         ]
-        return ft.Row(alignment=ft.MainAxisAlignment.
-                      CENTER, controls=cast(list[ft.Control], controls))
+        editable_row = ft.Row(
+            alignment=ft.MainAxisAlignment.CENTER,
+            controls=cast(list[ft.Control], editable_controls),
+        )
+
+        # --- Version 2 : lecture seule, texte avec un vrai fondu --------
+        # `key=ft.ValueKey(state.value)` est indispensable : sans lui,
+        # AnimatedSwitcher voit "le même Text, juste mis à jour" et ne
+        # joue AUCUNE transition (comportement documenté de Flutter/Flet
+        # : même type + même clé => mise à jour, pas d'animation).
+        faded_display = ft.AnimatedSwitcher(
+            content=ft.Text(
+                str(state.value),
+                key=ft.ValueKey(state.value),
+                size=32,
+                weight=ft.FontWeight.BOLD,
+                color=text_color,
+            ),
+            transition=ft.AnimatedSwitcherTransition.FADE,
+            duration=300,
+        )
+
+        return ft.Column(
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            controls=cast(
+                list[ft.Control],
+                [editable_row, ft.Divider(), faded_display],
+            ),
+        )
+
 
 if __name__ == "__main__":
 
