@@ -11,6 +11,43 @@ class CounterPage:
 
     @staticmethod
     @ft.component
+    def transitionedBtn() -> ft.Control:  # Transitioned btn (Declarative)
+        state, set_state = ft.use_state(True)
+
+        return ft.Row(
+            [
+                ft.Container(
+                    width=100,
+                    bgcolor=ft.Colors.GREEN if state else ft.Colors.RED,
+                    border_radius=5,
+                    animate=ft.Animation(1000, curve=ft.AnimationCurve.EASE_IN_OUT),
+                    content=ft.Button(
+                        ft.AnimatedSwitcher(
+                            duration=700,
+                            transition=ft.AnimatedSwitcherTransition.FADE,
+                            content=ft.Text(
+                                "GO!" if state else "Stop!", key=str(state)
+                            ),
+                        ),
+                        bgcolor=ft.Colors.TRANSPARENT,
+                        color=ft.Colors.WHITE,
+                        on_click=lambda _: set_state(not state),
+                        style=ft.ButtonStyle(
+                            shape=ft.RoundedRectangleBorder(radius=5),
+                            mouse_cursor=ft.MouseCursor.CLICK,
+                        ),
+                    ),
+                ),
+                ft.Text(
+                    str(state),
+                    opacity=1 if state else 0.4,
+                    animate_opacity=700,
+                ),
+            ]
+        )
+
+    @staticmethod
+    @ft.component
     def view() -> ft.Control:
         state, _ = ft.use_state(lambda: CounterState())
 
@@ -75,7 +112,13 @@ class CounterPage:
             horizontal_alignment=ft.CrossAxisAlignment.CENTER,
             controls=cast(
                 list[ft.Control],
-                [editable_row, ft.Divider(), faded_display],
+                [
+                    CounterPage.transitionedBtn(),
+                    ft.Divider(),
+                    editable_row,
+                    ft.Divider(),
+                    faded_display,
+                ],
             ),
         )
 
