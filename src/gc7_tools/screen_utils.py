@@ -171,8 +171,12 @@ def gc7_rules(
 
     # height: int = 742  # Note : 24 (padding top) - 20 (padding bottom) = 1044 → page.window_height = 1044 - 742 Galaxy A5
     if height is None:
-        height = 1088 if left >= 1912 else 1040  # Pour adapter écran #2 sans la barre windows
+        height = (
+            1088 if left >= 1912 else 1040
+        )  # Pour adapter écran #2 sans la barre windows
 
+    if left == 840:
+        height = 808  # Pour adapter fenêtre pour vidéos
     # print(width)
 
     # VIDÉO :
