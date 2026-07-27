@@ -9,11 +9,10 @@ class CounterPage:
 
     @staticmethod
     @ft.component
-    def transitionedBtn() -> ft.Control:  # Transitioned btn (Declarative)
+    def transitionedBtn() -> ft.Row:  # Transitioned btn (Declarative)
         state, set_state = ft.use_state(True)
 
-        return ft.Row(
-            [
+        return ft.Row(controls=[
                 ft.Container(
                     width=100,
                     bgcolor=ft.Colors.GREEN if state else ft.Colors.RED,
@@ -41,8 +40,7 @@ class CounterPage:
                     opacity=1 if state else 0.4,
                     animate_opacity=700,
                 ),
-            ]
-        )
+            ])
 
     @staticmethod
     @ft.component
