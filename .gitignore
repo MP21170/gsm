@@ -181,4 +181,4 @@ flet-desktop-light.zip
 /src/gsm/services/storage/__pycache__/
 
 /nul
-src/gsm/app_data/app_state.json
+app_state.json
