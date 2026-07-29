@@ -1,5 +1,6 @@
-import os
+import os, re, inspect
 from dotenv import load_dotenv
+from datetime import datetime as dt
 
 # Charger les variables d'environnement du fichier .env
 load_dotenv(override=True)
@@ -19,8 +20,10 @@ DEFAULT_ROUTE = "/about"
 DEFAULT_ROUTE = "/counter"
 #################################################
 
+
 def get_env(key: str, default=None):
     return os.getenv(key, default)
+
 
 def _env_int(name: str, default: int = 0) -> int:
     raw = str(os.getenv(name, str(default)) or "").strip()
@@ -36,8 +39,52 @@ def _env_int(name: str, default: int = 0) -> int:
 
     try:
         return int(match.group(0))
-    except (TypeError, ValueError):
+    except TypeError, ValueError:
         return default
+
+
+def curr_time():
+    now = dt.now()
+    return f"{now.hour:02d}:{now.minute:02d}:{now.second:02d}"
+
+
+def nf(f, dec=2):
+    "Number Format 123456789 → 123 456,79"
+    try:
+        f = float(f)
+        # Keep formatting deterministic on all platforms (desktop/mobile/web)
+        # by avoiding OS locale dependencies.
+        s = f"{f:,.{dec}f}"
+        # U+00A0 is better supported on Android fonts than U+202F.
+        return s.replace(",", "\u00a0").replace(".", ",")
+    except TypeError, ValueError:
+        print(f"nf(): unsupported value type ({type(f).__name__}) -> {f}")
+        return str(f)
+
+
+def dv(var) -> str:
+    """ Debug Var → name = <type> value"""
+    frame = inspect.currentframe()
+    if frame is None:
+        print(f"<unknown> = <{type(var).__name__}> {var!r}")
+        return ''
+
+    caller = frame.f_back
+    if caller is None:
+        print(f"<unknown> = <{type(var).__name__}> {var!r}")
+        return ''
+
+    name = None
+    for var_name, var_val in caller.f_locals.items():
+        if var_val is var:
+            name = var_name
+            break
+
+    if name is None:
+        name = "<unknown>"
+
+    return f"{name} = <{type(var).__name__}> {var!r}"
+
 
 if __name__ == "__main__":
 
