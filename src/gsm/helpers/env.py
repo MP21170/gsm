@@ -65,6 +65,7 @@ def nf(f, dec=2):
 def dv(var) -> str:
     """ Debug Var → name = <type> value"""
     frame = inspect.currentframe()
+    
     if frame is None:
         print(f"<unknown> = <{type(var).__name__}> {var!r}")
         return ''
@@ -85,7 +86,30 @@ def dv(var) -> str:
 
     return f"{name} = <{type(var).__name__}> {var!r}"
 
+def dvd(var):
+    """ Debug Var → name = <type> value"""
+    frame = inspect.currentframe()
+    
+    if frame is None:
+        print(f"<unknown> = <{type(var).__name__}> {var!r}")
+        return
 
+    caller = frame.f_back
+    if caller is None:
+        print(f"<unknown> = <{type(var).__name__}> {var!r}")
+        return
+
+    name = None
+    for var_name, var_val in caller.f_locals.items():
+        if var_val is var:
+            name = var_name
+            break
+
+    if name is None:
+        name = "<unknown>"
+
+    print(f"{name} = <{type(var).__name__}> {var!r}")
+    
 if __name__ == "__main__":
 
     w = int(str(get_env("gsm_WINDOW_LEFT", 1912)))

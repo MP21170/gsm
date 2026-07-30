@@ -9,8 +9,7 @@ class AppWindow:
     title: str = "GSM App"
 
     local = 1
-
-    print(local)
+    print(f"{local = } (app_window)")
 
     def apply(self, page: ft.Page):
         page.title = self.title
