@@ -24,8 +24,6 @@ from gsm.views.pages.home import HomePage
 from gsm.views.pages.about import AboutPage
 from gsm.views.pages.counter import CounterPage
 from gsm.views.pages.test import TestPage
-from gsm.views.not_found import NotFoundPage
-
 
 @dataclass(frozen=True)
 class PageRoute:
