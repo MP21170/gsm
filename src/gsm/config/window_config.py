@@ -13,14 +13,14 @@ sl = "\n" + "-" * 69
 class WindowConfig:
     """Position de la fenêtre de l'application sur l'écran, ainsi que sa taille et son comportement.
     1 - 1386 x 1038 (D)
-    2 - 840 x 1412 pour vidéo
+    2 - 856 x 1412 pour vidéo - Capture: ←2 ↑3 ↔1386 ↕800 
     3 - 1913 x 1086 (Écran 2 - Pos 1)
     3 - 2475 x 1086 (  "     - Pos 2)
     """
 
     top: int = 0
     left: int = int(
-        str(get_env("GSM_WINDOW_LEFT", "1386"))  # D: 1386 - 1913 - 2475 - 840 (vidéo)
+        str(get_env("GSM_WINDOW_LEFT", "856"))  # D: 1386 - 1913 - 2475 - 840 (vidéo)
     )
     width: int = 540  # 540 → 524 net interne)
     height: int = 1038
@@ -45,7 +45,7 @@ class WindowConfig:
         if self.left < 1373:
             print("Focus à l'App !")
             self.height = 810
-            page.run_task(page.window.to_front)  # ← Pour donner le focus à l'App
+            # page.run_task(page.window.to_front)  # ← Pour donner le focus à l'App
 
         # print(f"{self.need_cli_below = } (window.py)" + sl)
 

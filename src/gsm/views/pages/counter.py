@@ -69,7 +69,7 @@ class CounterPage:
             animate=ft.Animation(300, ft.AnimationCurve.EASE_IN_OUT),
         )
 
-        editable_controls: list[ft.Control] = [
+        editable_controls = [
             ft.IconButton(
                 ft.Icons.REMOVE,
                 tooltip="Décrémenter",
