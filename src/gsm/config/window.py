@@ -20,8 +20,8 @@ class WindowSettings:
 
     top: int = 0
     left: int = int(
-        str(get_env("GSM_WINDOW_LEFT", "1913"))  # D: 1386 - 1913 - 2475
-    )  # 840 pour vidéo - 1412 pour un seul écran - Default: 1912 pour 2ème écran
+        str(get_env("GSM_WINDOW_LEFT", "1386"))  # D: 1386 - 1913 - 2475 - 840 (vidéo)
+    )
     width: int = 540  # 540 → 524 net interne)
     height: int = 1038
 
@@ -42,21 +42,12 @@ class WindowSettings:
 
         page.title = AppWindow.title
 
-        h = page.height
-
-        # dvd(self.height)
-
         if self.left < 1373:
             print("Focus à l'App !")
             self.height = 810
             page.run_task(page.window.to_front)  # ← Pour donner le focus à l'App
 
-        print(f"{self.need_cli_below = } (window.py)" + sl)
-        print(page.window.height)
-        # page.window.height = self.height = 1038 # 2ar
-        # page.window.height = self.height - 300 if self.need_cli_below else self.height
-        print(page.window.height)
-        # print(f"{self.height = }")
+        # print(f"{self.need_cli_below = } (window.py)" + sl)
 
         page.window.width = self.width
 
@@ -81,8 +72,10 @@ class WindowSettings:
 
         print(
             {
+                "écran": 1 if self.left <= 1386 else 2,
+                "top": int(page.window.top),
                 "left": page.window.left,
-                "width": page.window.width,
+                "width": int(page.window.width),
                 "height": page.window.height,
             }
         )
@@ -91,4 +84,3 @@ class WindowSettings:
         # page.theme_mode = ft.ThemeMode.LIGHT
         # page.theme_mode = ft.ThemeMode.DARK
         page.update()
-        print("oka")

@@ -8,6 +8,7 @@ class AppWindow:
 
     title: str = "GSM App"
 
+    # * [ ] L_ dans title pour local
     local = 1
     print(f"{local = } (app_window)")
 
