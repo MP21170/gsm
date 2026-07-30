@@ -4,21 +4,6 @@ En travaux → branche declarative
 
 ## Flux
 
-### Dossiers/fichiers principaux
-
-bootstrap/ = initialisation
-
-core/ = fondations de l’app
-
-- config.py = params
-- router.py = navigation, logique centrale
-
-layouts/ = structure visuelle - Templates
-
-views/ = écrans
-
-app.py = assemblage déclaratif
-
 ### Simplifié
 
 ```bash
@@ -38,7 +23,6 @@ Components
 ```
 
 ### Détaillé
-
 
 ```bash
 uv run flet run
@@ -65,12 +49,10 @@ gsm/bootstrap/app_bootstrap.py
 
         |
         v
-
 gsm/app.py
 
         |
         v
-
 App()
 
         |
@@ -85,44 +67,44 @@ App()
         +--> View courante
 ```
 
-## Structure
+## Structure (Dossiers et fichiers principaux)
 
 ```bash
-src/
-│
-├── main.py                    # Entry point Flet
-│
-└── gsm/
-    │
-    ├── app.py                 # Racine déclarative de l'application
-    │
-    ├── bootstrap/
-    │   └── app_bootstrap.py   # Initialisation de l'application
-    │
-    ├── core/
-    │   ├── config.py          # Configuration globale
-    │   ├── router.py          # Routes/navigation
-    │   ├── session.py         # Session utilisateur
-    │   └── theme.py           # Thème global
-    │
-    ├── providers/
-    │   └── app_provider.py    # État global partagé
-    │
-    ├── services/
-    │   ├── auth_service.py
-    │   └── api_service.py
-    │
-    ├── layouts/
-    │   └── main_layout.py
-    │
-    ├── views/
-    │   ├── home.py
-    │   ├── login.py
-    │   └── settings.py
-    │
-    └── components/
-        ├── header.py
-        └── sidebar.py
+GSM/                             # Dossier racine du projet (Majuscules)
+├── .git/                        # Gestion de version
+├── .gitignore                   # Fichiers à ignorer par Git
+├── .vscode/                     # Configuration de l'éditeur (ex: settings.json)
+│   └── settings.json
+├── src/
+│   ├── main.py                  # Point d'entrée unique (uv run flet run)
+│   └── gsm/                     # Votre package principal
+│       ├── __init__.py
+│       ├── app.py               # Contient la classe App(ft.UserControl) ou similaire
+│       ├── bootstrap/
+│       │   ├── __init__.py
+│       │   └── app_bootstrap.py # Logique d'initialisation (Services, Session...)
+│       ├── config/
+│       │   ├── __init__.py
+│       │   └── app_window.py    # Votre @dataclass AppWindow
+│       ├── core/                # Code LOGIQUE uniquement (Zéro interface graphique)
+│       │   ├── __init__.py
+│       │   ├── database.py      # Exemple : Gestion DB
+│       │   └── auth_service.py  # Exemple : Gestion Token / Login
+│       ├── layouts/
+│       │   ├── __init__.py
+│       │   └── main_layout.py   # Structure globale (Sidebar, AppBar)
+│       ├── routing/
+│       │   ├── __init__.py
+│       │   └── router.py        # Gestionnaire de routes / vues
+│       ├── views/
+│       │   ├── __init__.py
+│       │   ├── home_view.py     # Exemple de vue (Page complète)
+│       │   └── settings_view.py
+│       └── components/
+│           ├── __init__.py
+│           └── custom_button.py # Composants graphiques réutilisables
+├── pyproject.toml               # Configuration des dépendances (géré par uv)
+├── README.md                    # Documentation du projet              # Géré par uv
 ```
 
 ## Mémo

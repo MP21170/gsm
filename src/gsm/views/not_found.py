@@ -1,4 +1,4 @@
-# src/gsm/views/pages/p404.py
+# src/gsm/views/not_found.py
 import flet as ft
 
 

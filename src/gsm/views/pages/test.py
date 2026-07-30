@@ -2,14 +2,14 @@
 import flet as ft
 
 
-class AboutPage:
-    """Page 'À propos'."""
+class TestPage:
+    """Page 4 'Test'."""
 
     @staticmethod
     @ft.component
     def view() -> ft.Control:
         return ft.Column(
             controls=[
-                ft.Text("À propos", size=28, weight=ft.FontWeight.BOLD),
+                ft.Text("Test ready.", size=28, weight=ft.FontWeight.BOLD),
             ],
         )

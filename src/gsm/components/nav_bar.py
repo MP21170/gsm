@@ -1,6 +1,6 @@
 import flet as ft
 
-from gsm.core.routes_registry import PAGES
+from gsm.routing.routes_registry import PAGES
 
 
 class NavBar:

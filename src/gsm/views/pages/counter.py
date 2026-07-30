@@ -96,22 +96,28 @@ class CounterPage:
             content=ft.Text(
                 str(state.value),
                 key=ft.ValueKey(state.value),
-                size=32,
+                size=54,
                 weight=ft.FontWeight.BOLD,
                 color=text_color,
             ),
             transition=ft.AnimatedSwitcherTransition.FADE,
-            duration=300,
+            duration=700,
         )
 
         return ft.Column(
-            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
             controls=[
-                CounterPage.transitionedBtn(),
-                ft.Divider(),
-                editable_row,
-                ft.Divider(),
-                faded_display,
+                ft.Text("Compteur", size=28, weight=ft.FontWeight.BOLD),
+                ft.Column(
+                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                    controls=[
+                        ft.Divider(),
+                        CounterPage.transitionedBtn(),
+                        ft.Divider(),
+                        editable_row,
+                        ft.Divider(),
+                        faded_display,
+                    ],
+                ),
             ],
         )
 

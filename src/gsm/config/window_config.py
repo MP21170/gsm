@@ -10,7 +10,7 @@ sl = "\n" + "-" * 69
 
 
 @dataclass
-class WindowSettings:
+class WindowConfig:
     """Position de la fenêtre de l'application sur l'écran, ainsi que sa taille et son comportement.
     1 - 1386 x 1038 (D)
     2 - 840 x 1412 pour vidéo

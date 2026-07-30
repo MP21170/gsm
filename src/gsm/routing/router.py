@@ -1,15 +1,15 @@
-# src/gsm/core/router.py
+# src/gsm/routing/router.py
 import flet as ft
-
-from gsm.core.routes_registry import PAGES
+from gsm.config.app_config import config
 from gsm.layouts.main_layout import MainLayout
-from gsm.views.pages.not_found import NotFoundPage
+from gsm.routing.routes_registry import PAGES
+from gsm.views.not_found import NotFoundPage
 
 
 class AppRouter:
     """
     Construit l'arbre `ft.Route` à partir du registre `PAGES`
-    (gsm/core/routes_registry.py) — seule source de vérité sur les pages.
+    (gsm/routing/routes_registry.py) — seule source de vérité sur les pages.
 
     Depuis Flet 0.85, le routage déclaratif se fait avec `ft.Router` +
     `ft.Route` (inspiré de React Router) : plus besoin de gérer
@@ -18,14 +18,7 @@ class AppRouter:
 
     @staticmethod
     def _page_routes() -> list[ft.Route]:
-        return [
-            (
-                ft.Route(index=True, component=page.component)
-                if page.is_index
-                else ft.Route(path=page.segment, component=page.component)
-            )
-            for page in PAGES
-        ]
+        return [ft.Route(path=page.segment, component=page.component) for page in PAGES]
 
     @staticmethod
     def routes() -> list[ft.Route]:
@@ -35,6 +28,7 @@ class AppRouter:
                 # routes filles avec le même MainLayout (header, footer...).
                 component=MainLayout.view,
                 children=[
+                    # Routes filles : toutes les pages déclarées dans le registre
                     *AppRouter._page_routes(),
                     # Catch-all : doit rester en dernier, capture tout ce
                     # qui n'a matché aucune page ci-dessus. Reste englobée
@@ -48,7 +42,7 @@ class AppRouter:
     @staticmethod
     @ft.component
     def view() -> ft.Control:
-        return ft.SafeArea(ft.Router(AppRouter.routes()))
+        return ft.SafeArea(ft.Router(routes=AppRouter.routes()))
 
 
 # ---------------------------------------------

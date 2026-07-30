@@ -1,3 +1,5 @@
+# src/gsm/routing/routes_registry.py
+
 """
 Registre central des pages de l'application.
 
@@ -12,16 +14,17 @@ Pour ajouter une page :
    Rien d'autre à modifier — ni dans le routeur, ni dans la NavBar.
 """
 
-from __future__ import annotations
-
 from dataclasses import dataclass
 from typing import Callable
-
 import flet as ft
 
+from gsm.config.app_config import config  # 💡 On importe la configuration
+
+from gsm.views.pages.home import HomePage
 from gsm.views.pages.about import AboutPage
 from gsm.views.pages.counter import CounterPage
-from gsm.views.pages.not_found import NotFoundPage
+from gsm.views.pages.test import TestPage
+from gsm.views.not_found import NotFoundPage
 
 
 @dataclass(frozen=True)
@@ -34,7 +37,7 @@ class PageRoute:
 
     @property
     def is_index(self) -> bool:
-        return self.path == "/"
+        return self.path == config.home_path
 
     @property
     def segment(self) -> str:
@@ -46,6 +49,8 @@ class PageRoute:
 # (Le 404 n'est volontairement pas ici : ce n'est pas une page
 # "navigable", elle est câblée à part comme route catch-all.)
 PAGES: list[PageRoute] = [
-    PageRoute(component=CounterPage.view, path="/", label="Accueil"),
+    PageRoute(component=HomePage.view, path="/", label="Accueil"),
     PageRoute(component=AboutPage.view, path="/about", label="About"),
+    PageRoute(component=CounterPage.view, path="/counter", label="Compteur"),
+    PageRoute(component=TestPage.view, path="/test", label="Test"),
 ]

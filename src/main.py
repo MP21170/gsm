@@ -1,6 +1,6 @@
 # src/main.py
 import flet as ft
 
-from gsm.bootstrap.setup import Setup
+from gsm.bootstrap.app_bootstrap import AppBootstrap
 
-ft.run(Setup)
+ft.run(AppBootstrap)
