@@ -14,12 +14,13 @@ uv sync --extra desktop
 
 $mode = if ($args.Count -gt 0) { "$($args[0])".ToLowerInvariant() } else { "" }
 
+uv run flet -V
+
 if ($mode -eq "w") {
     echo "Lancement de l'application Flet - MODE WEB"
     uv run --active python -m flet.cli run -r --web
 }
 else {
     echo "Lancement de l'application Flet - MODE APP"
-    uv run flet -V
     uv run --active python -m flet.cli run -r
 }
