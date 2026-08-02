@@ -20,5 +20,6 @@ if ($mode -eq "w") {
 }
 else {
     echo "Lancement de l'application Flet - MODE APP"
+    uv run flet -V
     uv run --active python -m flet.cli run -r
 }
