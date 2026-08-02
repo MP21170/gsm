@@ -46,7 +46,7 @@ class WindowConfig:
 
         page.window.width = self.width
 
-        self.height = self.height - 300 if self.need_cli_below else self.height
+        self.height = self.height - 307 if self.need_cli_below else self.height
         # page.window.height = h
 
         page.window.top = self.top
