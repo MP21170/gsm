@@ -72,6 +72,7 @@ class WindowConfig:
                 "left": page.window.left,
                 "width": int(page.window.width),
                 "height": page.window.height,
+                "need_cli": self.need_cli_below,
             }
         )
 
