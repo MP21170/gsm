@@ -1,6 +1,6 @@
 # src/gsm/routing/router.py
 import flet as ft
-from gsm.config.app_config import config
+# from gsm.config.app_config import config
 from gsm.layouts.main_layout import MainLayout
 from gsm.routing.routes_registry import PAGES
 from gsm.views.pages.not_found import NotFoundPage

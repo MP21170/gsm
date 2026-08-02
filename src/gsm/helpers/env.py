@@ -25,6 +25,10 @@ def get_env(key: str, default=None):
     return os.getenv(key, default)
 
 
+def is_dev_env() -> bool:
+    return get_env("DEV", "0") == "1"
+
+
 def _env_int(name: str, default: int = 0) -> int:
     raw = str(os.getenv(name, str(default)) or "").strip()
 
@@ -63,17 +67,17 @@ def nf(f, dec=2):
 
 
 def dv(var) -> str:
-    """ Debug Var → name = <type> value"""
+    """Debug Var → name = <type> value"""
     frame = inspect.currentframe()
-    
+
     if frame is None:
         print(f"<unknown> = <{type(var).__name__}> {var!r}")
-        return ''
+        return ""
 
     caller = frame.f_back
     if caller is None:
         print(f"<unknown> = <{type(var).__name__}> {var!r}")
-        return ''
+        return ""
 
     name = None
     for var_name, var_val in caller.f_locals.items():
@@ -86,10 +90,11 @@ def dv(var) -> str:
 
     return f"{name} = <{type(var).__name__}> {var!r}"
 
+
 def dvd(var):
-    """ Debug Var → name = <type> value"""
+    """Debug Var → name = <type> value"""
     frame = inspect.currentframe()
-    
+
     if frame is None:
         print(f"<unknown> = <{type(var).__name__}> {var!r}")
         return
@@ -109,7 +114,8 @@ def dvd(var):
         name = "<unknown>"
 
     print(f"{name} = <{type(var).__name__}> {var!r}")
-    
+
+
 if __name__ == "__main__":
 
     w = int(str(get_env("gsm_WINDOW_LEFT", 1912)))

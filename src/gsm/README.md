@@ -22,49 +22,44 @@ View
 Components
 ```
 
-### Détaillé
+### Flux détaillé (Ordre de l'appel des fichiers)
 
 ```bash
 uv run flet run
-        |
         v
 src/main.py
+        v
+bootstrap/ AppBootstrap
+    +--> page.render(App)
         |
         v
-ft.run(AppBootstrap)
+    config/ AppConfig - Charge Config
+        +--> default home_path pour forcing
+        +--> config/ WindowConfig - Configure fenêtre
+        +--> initialise Services - À venir
+        +--> initialise Session - À venir
         |
         v
-gsm/bootstrap/app_bootstrap.py
-
-        |
-        +--> charge Config
-        |
-        +--> initialise Services
-        |
-        +--> initialise Session
-        |
-        +--> configure ft.Page
-        |
-        +--> page.render(App)
-
+    helpers/env.py - get_env, curr_time, nf, dv (debug var)
         |
         v
-gsm/app.py
+    config/ AppWindow - Configure ft.Page (title, ...)
+    |
+    v
+App
+    +--> routing/Router
+        À venir :
+            +--> Provider
+            +--> Theme
+        +--> layouts/ MainLayout
+        +--> views/pages/ NotFoundPage
+        +--> routing/ PageRoute
+            +--> config/ AppConfig (is_index())
 
-        |
-        v
-App()
-
-        |
-        +--> Provider
-        |
-        +--> Theme
-        |
-        +--> Router
-        |
-        +--> Layout
-        |
-        +--> View courante
+            +--> views/pages/ HomePage
+            +--> views/pages/ AboutPage
+            +--> views/pages/ CounterPage
+            +--> views/pages/ TestPage
 ```
 
 ## Structure (Dossiers et fichiers principaux)

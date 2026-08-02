@@ -123,14 +123,14 @@ Et dans le terminal qui apparaît enfin :
 ./go
 ```
 
-NB : Dans un codespace, seule la version Flet Web fonctionne (Avec l'option --web), et attention, pas de refresh, hotreload, etc... Bref, ne sert qu'à partager un rendu, voire éditer du code, ou éventuellement coder / modifier un script très simple...
+NB : Dans un codespace, seule la version Flet Web fonctionne (Avec l'option 'w'), et attention, pas de refresh, hotreload, etc... Bref, ne sert qu'à partager un rendu, voire éditer du code, ou éventuellement coder / modifier un script très simple...
 
 ### * Local - Win OS
 
 Éxécuter :
 
 ```bash
-./go
+./go w
 ```
 
 ## 🏗️ Construire une app pour votre mobile GSM

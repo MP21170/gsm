@@ -2,9 +2,7 @@ from dataclasses import dataclass, field
 import flet as ft
 
 
-from ..helpers.env import get_env, dv, dvd, curr_time
-from .app_window import AppWindow
-import inspect
+from ..helpers.env import get_env, curr_time
 
 sl = "\n" + "-" * 69
 
@@ -39,9 +37,6 @@ class WindowConfig:
             self.height = 1086
 
     def apply(self, page: ft.Page):
-
-        page.title = AppWindow.title
-
         if self.left < 1373:
             print("Focus à l'App !")
             self.height = 810
