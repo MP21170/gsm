@@ -1,7 +1,7 @@
 import flet as ft
 
-from gsm.views.templates.default import named_view
-from gsm.views.partials import build_release_update_card
+from upu.views.templates.default import named_view
+from upu.views.partials import build_release_update_card
 
 
 def build() -> ft.Control:

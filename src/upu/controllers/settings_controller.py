@@ -1,8 +1,8 @@
 import flet as ft
 import gc7_tools.gc7 as gc7
 
-from gsm.config import DEFAULT_ROUTE, VERSION
-from gsm.services.i18n_service import I18nService
+from upu.config import DEFAULT_ROUTE, VERSION
+from upu.services.i18n_service import I18nService
 
 
 class SettingsController:

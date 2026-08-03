@@ -5,8 +5,8 @@ import time
 import webbrowser
 
 import flet as ft
-from gsm.config import CACHE_DELAY
-from gsm.services import state_repository
+from upu.config import CACHE_DELAY
+from upu.services import state_repository
 
 _DATA_DIR = Path(__file__).resolve().parents[1] / "app_data"
 _APP_STATE_PATH = _DATA_DIR / "app_state.json"
@@ -68,7 +68,7 @@ def _can_open_release_url(now: float | None = None) -> bool:
 
 
 def _is_mobile_platform(page: ft.Page | None) -> bool:
-    """Detecte si la plateforme est Android ou iOS."""
+    """Détecte si la plateforme est Android ou iOS."""
     if page is None:
         return False
 

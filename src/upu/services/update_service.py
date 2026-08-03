@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from gsm.config import get_latest_release_info
-from gsm.services.state_repository import get_last_check_at
+from upu.config import get_latest_release_info
+from upu.services.state_repository import get_last_check_at
 
 KEY_UPDATE_LAST_CHECK_AT = "update.last_check_at"
 KEY_UPDATE_LATEST_VERSION = "update.latest_version"
@@ -38,7 +38,7 @@ class UpdateService:
         self.storage.set(KEY_UPDATE_LAST_CHECK_AT, checked_at)
         self.storage.set(KEY_UPDATE_LATEST_VERSION, latest)
 
-        # Retrocompatibilite temporaire des anciennes cles.
+        # Rétrocompatibilité temporaire des anciennes clés.
         self.storage.set(LEGACY_KEY_LAST_CHECK, checked_at)
         self.storage.set(LEGACY_KEY_LATEST_VERSION, latest)
 

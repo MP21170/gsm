@@ -3,7 +3,7 @@ import sqlite3
 from datetime import date
 from pathlib import Path
 
-from gsm.models.habit import Habit
+from upu.models.habit import Habit
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "app_data"
 DB_PATH = DATA_DIR / "gsm.db"

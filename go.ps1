@@ -109,9 +109,17 @@ $mode = if ($args.Count -gt 0) { "$($args[0])".ToLowerInvariant() } else { "" }
 #     Move-WindowsTerminalWindow -Left 2460 -Top 779 -Width 540 -Height 300
 # }
 
-if ([int]$env:UPU_WINDOW_CLI -eq 1) {
+if ([int]$env:GSM_WINDOW_CLI -eq 1) {
     Move-WindowsTerminalWindow `
         -Left 1913 `
+        -Top 779 `
+        -Width 540 `
+        -Height 300
+}
+
+if ([int]$env:UPU_WINDOW_CLI -eq 1) {
+    Move-WindowsTerminalWindow `
+        -Left 2460 `
         -Top 779 `
         -Width 540 `
         -Height 300

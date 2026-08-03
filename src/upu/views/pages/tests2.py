@@ -4,12 +4,12 @@ from typing import cast
 
 import flet as ft
 
-from gsm.config import CACHE_DELAY, get_latest_release_info
-from gsm.helpers.app_actions import close_app, open_url
-from gsm.helpers.buttons import filled_button, extLink
-from gsm.helpers.snackbar import show_snackbar
-from gsm.views.partials import build_release_update_card
-from gsm.views.templates.default import named_view
+from upu.config import CACHE_DELAY, get_latest_release_info
+from upu.helpers.app_actions import close_app, open_url
+from upu.helpers.buttons import filled_button, extLink
+from upu.helpers.snackbar import show_snackbar
+from upu.views.partials import build_release_update_card
+from upu.views.templates.default import named_view
 
 
 # ------------------------------------------------------------

@@ -1,7 +1,7 @@
 from dataclasses import field
-from gsm.views.templates.default import named_view
-from gsm.helpers.app_actions import open_url
-from gsm.helpers.buttons import extLink
+from upu.views.templates.default import named_view
+from upu.helpers.app_actions import open_url
+from upu.helpers.buttons import extLink
 import flet as ft
 
 

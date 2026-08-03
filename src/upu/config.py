@@ -6,7 +6,7 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 from dotenv import load_dotenv
-from gsm.services.state_repository import (
+from upu.services.state_repository import (
     APP_BUILD_PATH,
     DEFAULT_LAST_CHECK_AT,
     get_cached_release_info,
@@ -131,8 +131,9 @@ def _env_int(name: str, default: int = 0) -> int:
         return default
 
 
-WINDOW_LEFT = _env_int(name="gsm_WINDOW_LEFT", default=1412)  # 1526 - 1912
-DEBUG_RELEASE_JSON = _env_int("gsm_DEBUG_RELEASE_JSON", 0) == 1
+WINDOW_LEFT = _env_int(name="UPU_WINDOW_LEFT", default=1412)  # 1526 - 1912
+WINDOW_CLI = _env_int(name="UPU_WINDOW_CLI", default=0)  # 1 CLI - 0 Pas CLI
+DEBUG_RELEASE_JSON = _env_int("GSM_DEBUG_RELEASE_JSON", 0) == 1
 GITHUB_OWNER = "GrCOTE7"
 GITHUB_REPO = "gsm"
 GITHUB_LATEST_RELEASE_API = (

@@ -2,7 +2,7 @@ import flet as ft
 from typing import Callable
 from gc7_tools.helpers import sepa, sepa_outlined
 
-from gsm.guests import register
+from upu.guests import register
 
 date = "29-99-99"
 guest = "MATRICE POUR FUTUR TEST"
@@ -10,7 +10,7 @@ source = ""
 response = ""
 url = ""
 
-from gsm.views.partials.test_guests_src import guest_source
+from upu.views.partials.test_guests_src import guest_source
 
 S: str = 'abc'
 

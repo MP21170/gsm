@@ -1,14 +1,14 @@
 import flet as ft
 
-from gsm.config import (
+from upu.config import (
     GITHUB_LATEST_RELEASE_PAGE,
     VERSION,
     get_latest_release_info,
     get_latest_stable_version,
     is_update_available,
 )
-from gsm.helpers.app_actions import open_url
-from gsm.helpers.buttons import filled_button
+from upu.helpers.app_actions import open_url
+from upu.helpers.buttons import filled_button
 
 
 def build_release_update_card(width: int = 360) -> ft.Control:

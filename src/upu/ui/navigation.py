@@ -2,11 +2,11 @@ import asyncio
 
 import flet as ft
 
-from gsm.config import DEFAULT_ROUTE
-from gsm.helpers.snackbar import show_snackbar
-from gsm.routes import get_routes, route_to_index
-from gsm.services.storage.storage_factory import create_storage
-from gsm.services.update_service import UpdateService
+from upu.config import DEFAULT_ROUTE
+from upu.helpers.snackbar import show_snackbar
+from upu.routes import get_routes, route_to_index
+from upu.services.storage.storage_factory import create_storage
+from upu.services.update_service import UpdateService
 
 NAV_ITEMS = get_routes()
 

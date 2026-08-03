@@ -1,10 +1,10 @@
 import flet as ft
 
-from gsm.views.templates.default import named_view
-from gsm.views.footers.ready_more import ready_more
+from upu.views.templates.default import named_view
+from upu.views.footers.ready_more import ready_more
 from gc7_tools.helpers import sepa_major, sepa_outlined
 
-from gsm.guests import REGISTRY
+from upu.guests import REGISTRY
 
 
 def build() -> ft.Control:

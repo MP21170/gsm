@@ -1,14 +1,12 @@
 """Actions transverses (URL, fermeture app) selon la plateforme."""
 
-from __future__ import annotations
-
 import os
 import webbrowser
 
 import flet as ft
 
-from gsm.services.android_bridge import launch_url_intent
-from gsm.helpers.snackbar import show_snackbar
+from upu.services.android_bridge import launch_url_intent
+from upu.helpers.snackbar import show_snackbar
 
 
 def _as_page(target: object) -> ft.Page | None:
