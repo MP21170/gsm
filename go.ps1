@@ -103,61 +103,70 @@ public class WindowHelper
     }
 }
 
+# Repositionne CETTE fenêtre de terminal selon la variable d'env donnée,
+# si elle vaut 1 — factorisé une seule fois, réutilisé pour gsm et upu.
+function Move-CliIfNeeded {
+    param(
+        [string]$EnvVarName,
+        [int]$Left,
+        [int]$Top,
+        [int]$Width = 540,
+        [int]$Height = 300
+    )
+
+    $raw = [System.Environment]::GetEnvironmentVariable($EnvVarName)
+
+    if ($raw -and [int]$raw -eq 1) {
+        Move-WindowsTerminalWindow -Left $Left -Top $Top -Width $Width -Height $Height
+    }
+}
+
 $mode = if ($args.Count -gt 0) { "$($args[0])".ToLowerInvariant() } else { "" }
 
-# if ($mode -eq "p") {
-#     Move-WindowsTerminalWindow -Left 2460 -Top 779 -Width 540 -Height 300
-# }
+# --- Mode interne : ce process EST le second terminal, dédié à upu ------
+# Déclenché uniquement quand ce script se relance lui-même (voir mode "u"
+# plus bas) — pas un mode que tu tapes toi-même en ligne de commande.
+if ($mode -eq "_upu_child") {
+    Move-CliIfNeeded -EnvVarName "UPU_WINDOW_CLI" -Left 2460 -Top 779
 
-if ([int]$env:GSM_WINDOW_CLI -eq 1) {
-    Move-WindowsTerminalWindow `
-        -Left 1913 `
-        -Top 779 `
-        -Width 540 `
-        -Height 300
+    Set-Location -Path "$PSScriptRoot"
+    uv run --active python -m flet.cli run ./main_upu.py -r
+    return
 }
 
-if ([int]$env:UPU_WINDOW_CLI -eq 1) {
-    Move-WindowsTerminalWindow `
-        -Left 2460 `
-        -Top 779 `
-        -Width 540 `
-        -Height 300
-}
+# --- Mode normal ----------------------------------------------------------
 
-# Move-WindowsTerminalWindow -Left 2460 -Top 779 -Width 540 -Height 300
+# Place le terminal courant sous la fenêtre de l'app gsm, si demandé —
+# s'applique à TOUS les modes (défaut, web, u), puisque gsm tourne dans
+# CE terminal dans les trois cas.
+Move-CliIfNeeded -EnvVarName "GSM_WINDOW_CLI" -Left 1913 -Top 779
 
-Set-Location -Path "$PSScriptRoot"
-
-& "$PSScriptRoot\scripts\check_version_sync.ps1"
-
-uv sync --extra desktop
-
-##################################################################
-
-# Se placer dans la racine du projet
 Set-Location -Path "$PSScriptRoot"
 
 # Vérifie silencieusement l'alignement des versions; message orange uniquement en cas d'écart.
 & "$PSScriptRoot\scripts\check_version_sync.ps1"
 
-
-# Lancer explicitement l'app racine
-# uv run --active flet run -r audio_04.py
-# Utilise pyproject.toml path pour trouver le projet et les dépendances
-# uv run --active python -m flet.cli run -r src/main.py
-
 uv sync --extra desktop
-
-$mode = if ($args.Count -gt 0) { "$($args[0])".ToLowerInvariant() } else { "" }
-
 uv run flet -V
 
+if ($mode -eq "u") {
+    # Ouvre un second terminal Windows Terminal, qui se relance lui-même
+    # avec le mode interne "_upu_child" : il se repositionne selon
+    # UPU_WINDOW_CLI puis lance main_upu.py — toute la logique (positions,
+    # lecture du .env) reste dans CE fichier, rien n'est dupliqué en ligne.
+    #
+    # Sur PowerShell 7.x (Core, ex. 7.6.4), -ArgumentList prend un vrai
+    # tableau : chaque élément est quoté automatiquement par .NET si
+    # besoin (espaces, etc.) — PAS de guillemets manuels ici, sinon on
+    # les retrouve littéralement dans l'argument (chemin cassé).
+    Start-Process wt.exe -ArgumentList "pwsh", "-NoExit", "-File", $PSCommandPath, "_upu_child"
+}
+
 if ($mode -eq "w") {
-    echo "Lancement de l'application Flet - MODE WEB"
-    uv run --active python -m flet.cli run -r --web
+    Write-Host "Lancement de l'application Flet - MODE WEB"
+    uv run --active python -m flet.cli run ./main_gsm.py -r --web
 }
 else {
-    echo "Lancement de l'application Flet - MODE APP"
-    uv run --active python -m flet.cli run -r
+    Write-Host "Lancement de l'application Flet - MODE APP"
+    uv run --active python -m flet.cli run ./main_gsm.py -r
 }
