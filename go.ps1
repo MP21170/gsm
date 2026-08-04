@@ -127,7 +127,7 @@ $mode = if ($args.Count -gt 0) { "$($args[0])".ToLowerInvariant() } else { "" }
 # Déclenché uniquement quand ce script se relance lui-même (voir mode "u"
 # plus bas) — pas un mode que tu tapes toi-même en ligne de commande.
 if ($mode -eq "_upu_child") {
-    Move-CliIfNeeded -EnvVarName "UPU_WINDOW_CLI" -Left 2460 -Top 779
+    Move-CliIfNeeded -EnvVarName "UPU_WINDOW_CLI" -Left 2445 -Top 779
 
     Set-Location -Path "$PSScriptRoot"
     uv run --active python -m flet.cli run ./main_upu.py -r
