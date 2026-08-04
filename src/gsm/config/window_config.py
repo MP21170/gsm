@@ -11,7 +11,7 @@ sl = "\n" + "-" * 69
 class WindowConfig:
     """Position de la fenêtre de l'application sur l'écran, ainsi que sa taille et son comportement.
     1 - 1386 x 1038 (D)
-    2 - 856 x 1412 pour vidéo - Capture: ←2 ↑3 ↔1386 ↕800 
+    2 - 810 x 1412 pour vidéo - Capture: ←2 ↑3 ↔1386 ↕800
     3 - 1913 x 1086 (Écran 2 - Pos 1)
     3 - 2475 x 1086 (  "     - Pos 2)
     """
@@ -28,7 +28,7 @@ class WindowConfig:
         or "0"
     )  # 0 ('défaut) pas de CLI sous la fenêtre - 1 → 300 px de place dessous pour la CLI
     # print(sl + f"\n{dv(left)} | {dv(width)} | {dv(height)}" + sl)
-    # print(f"{need_cli_below = } (window.py)" + sl)
+    print(f"{need_cli_below = } (window.py)" + sl)
 
     resizable: bool = True
 
@@ -39,7 +39,7 @@ class WindowConfig:
     def apply(self, page: ft.Page):
         if self.left < 1373:
             print("Focus à l'App !")
-            self.height = 810
+            self.height = 825
             # page.run_task(page.window.to_front)  # ← Pour donner le focus à l'App
 
         # print(f"{self.need_cli_below = } (window.py)" + sl)
