@@ -54,6 +54,8 @@ class MainLayout:
             content=ft.Column(
                 expand=True,
                 controls=[
+                    # XXX menu burger + logo + slogan
+                    # ft.Container(margin=ft.Margin(top=50)), ← Espace pour NavBar 
                     ft.Row(
                         alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                         controls=[

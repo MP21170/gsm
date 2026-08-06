@@ -4,7 +4,7 @@ import flet as ft
 
 from ..helpers.env import get_env, curr_time
 
-sl = "\n" + "-" * 69
+sl = "-" * 54
 
 
 @dataclass
@@ -28,8 +28,8 @@ class WindowConfig:
         or "0"
     )  # 0 ('défaut) pas de CLI sous la fenêtre - 1 → 300 px de place dessous pour la CLI
     # print(sl + f"\n{dv(left)} | {dv(width)} | {dv(height)}" + sl)
-    print(f"{need_cli_below = } (window.py)" + sl)
-
+    # print(sl+f"{need_cli_below = } (window.py)\n" + sl)
+    
     resizable: bool = True
 
     def __post_init__(self):
