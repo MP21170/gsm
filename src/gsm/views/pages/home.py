@@ -2,7 +2,7 @@
 import flet as ft
 
 from gsm.helpers.separators import sepa
-from gsm.helpers.refs import gh_link, gh_url
+from gsm.helpers.refs import aff, gh_link, gh_url, year_day
 
 
 class HomePage:
@@ -11,7 +11,7 @@ class HomePage:
     @staticmethod
     @ft.component
     def view() -> ft.Control:
-
+        print(year_day())
         return ft.Column(
             controls=[
                 ft.Text("Accueil", size=28, weight=ft.FontWeight.BOLD),
@@ -24,5 +24,7 @@ class HomePage:
                     weight=ft.FontWeight.BOLD,
                 ),
                 gh_link(),
+                sepa(),
+                aff(f"Jour de l'année : {year_day()}"),
             ],
         )
