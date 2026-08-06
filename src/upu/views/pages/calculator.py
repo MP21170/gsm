@@ -4,7 +4,7 @@ from upu.helpers.app_actions import open_url
 from upu.helpers.buttons import extLink, extLinkBtn
 import flet as ft
 
-from gsm.views.partials.separators import sepa, sepa_outlined, sepa_major
+from gsm.helpers.separators import sepa, sepa_outlined, sepa_major
 
 
 @ft.control
