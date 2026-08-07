@@ -46,7 +46,7 @@ Tu ❤️ Python...? Rejoins le chat en LIVE !
 
 ### 👉 En local (macOS/Linux/Windows) après le *[fork](doc/0101_GIT_FORK.md)*
 
-#### C'est aussi le mode idéal pour coder avec le projet (Hotreload et positionnement de l'App auto)
+#### C'est aussi le mode idéal pour coder avec le projet (Hotreload et positionnement de l'App AUTO)
 
 ### 👉 Et encore + simple et sans rien installer : Codespace → <a href="https://codespaces.new/GrCOTE7/gsm" title="Open YOUR CodeSpace Now... CTRL + Click HERE!"><img src="https://img.shields.io/badge/Dev%20GSM%20directement%20en%20ligne%20sur%20Github%20!-blue.svg" alt="CodeSpace link" /></a>
 
