@@ -1,3 +1,33 @@
+## [1.0.14](https://github.com/MP21170/gsm/compare/v1.0.13...v1.0.14) (2026-08-07)
+
+
+### Bug Fixes
+
+* ↑ ([6242a95](https://github.com/MP21170/gsm/commit/6242a955b6f986c77dbc151a525df9441e06ab6f))
+* 20 ([6db0037](https://github.com/MP21170/gsm/commit/6db003769d5fda6b39444f5360c9057fc6dab995))
+* add calculator ([8d81ca1](https://github.com/MP21170/gsm/commit/8d81ca1b395160863d695fac5933fca441456ecd))
+* add calculator ([6f71f6e](https://github.com/MP21170/gsm/commit/6f71f6e19b85584ace8ac868d8c18cdff87d7d44))
+* better app window width (516) ([633070f](https://github.com/MP21170/gsm/commit/633070f02689227551ef132bbac1517859624580))
+* better conf for Galaxy A5 ([133abfe](https://github.com/MP21170/gsm/commit/133abfe3babd036afe75998ba482338f110ed992))
+* better size and padding ([95fee4e](https://github.com/MP21170/gsm/commit/95fee4e2d6d4465708efaf4757cc681fd5666e6f))
+* caddyfiles settings ([3cdc13b](https://github.com/MP21170/gsm/commit/3cdc13be41fb94641c0ef6d9e3812dec40553f12))
+* close App windows in Web mode ([9743a0f](https://github.com/MP21170/gsm/commit/9743a0fafb132adab126f1352b081b53729f85a5))
+* complete wkflw ([e450f44](https://github.com/MP21170/gsm/commit/e450f44d276d5e083968303290ada45c380a2d79))
+* corr param SSH_UPU ([352bd2d](https://github.com/MP21170/gsm/commit/352bd2d6c899f3d2d22e9b972c71e22fb111e5ff))
+* demo semantric release auto ([5dc559b](https://github.com/MP21170/gsm/commit/5dc559bfee4564897648b954bb29a644c8cdcb7b))
+* good SSH key ([84caffb](https://github.com/MP21170/gsm/commit/84caffbc5d0ada35349556f14ebe3571924cafc0))
+* new upu SSH key ([29ca914](https://github.com/MP21170/gsm/commit/29ca91471b8ca597eae388878f625e49211a688a))
+* notif for close app ([c37b5ef](https://github.com/MP21170/gsm/commit/c37b5efcad8378750d8f0a02f455e86c796dd95a))
+* registry android compatibility ([4c324ff](https://github.com/MP21170/gsm/commit/4c324ffd6a31fde47ca325c4072150b01b34c425))
+* reset ports docker caddy ([958674f](https://github.com/MP21170/gsm/commit/958674fbeef5f1b2ad8349ed78afe0421f06ac8f))
+* reset test page ([fa754d5](https://github.com/MP21170/gsm/commit/fa754d5753c63e8e7f8693ce1c23dabeb2b7b131))
+* set docker prod for GSM project ([63114cb](https://github.com/MP21170/gsm/commit/63114cb58eab80d11a5ef3375eede1d8a19e170c))
+* set good footer settings ([598a285](https://github.com/MP21170/gsm/commit/598a285ca055e11389aa9c72537d695085a641c9))
+* set Server CI ([df66406](https://github.com/MP21170/gsm/commit/df664060f55e630367a5a02451546e4d651ddf3f))
+* setts for android ([402a1f5](https://github.com/MP21170/gsm/commit/402a1f56ddd7fe61ce774dc89283dc5168c1c4d2))
+* sub title center (optional) ([9e0b897](https://github.com/MP21170/gsm/commit/9e0b89782b6e6227ff85b5e3e68b5488687e131c))
+* trouble page.update() when page not yet ready ([2050fb5](https://github.com/MP21170/gsm/commit/2050fb59c9e613ca4267da76f3611de66033763f))
+
 ## [1.0.36](https://github.com/GrCOTE7/gsm/compare/v1.0.35...v1.0.36) (2026-07-21)
 
 
