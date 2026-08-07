@@ -42,7 +42,9 @@ Tu ❤️ Python...? Rejoins le chat en LIVE !
   </a>
 </div>
 
-### 👉 Direct en ligne : [gsm.COTE7.com](http://gsm.Cote7.com)
+### → [Cliquer ICI si vous êtes sur un appareil Android, mais ne pouvez pas 'flasher' ce QR Code](https://github.com/GrCOTE7/gsm/releases/download/v1.0.36/UpU.apk)
+
+### 👉 Direct en ligne : [http://GSM.COTE7.com](http://gsm.Cote7.com)
 
 ---
 
