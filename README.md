@@ -48,7 +48,7 @@ Tu ❤️ Python...? Rejoins le chat en LIVE !
 
 #### Le mode idéal aussi pour coder avec le projet
 
-En *CLI* (**C**ommande **L**ine **I**nterface = Console) :
+En *CLI* (***C***ommande ***L***ine ***I***nterface = Console) :
 
 ```bash
 ./go
