@@ -54,14 +54,13 @@ Tu ❤️ Python...? Rejoins le chat en LIVE !
 
 ### 👉 Et encore + simple et sans rien installer : Codespace → <a href="https://codespaces.new/GrCOTE7/gsm" title="Open YOUR CodeSpace Now... CTRL + Click HERE!"><img src="https://img.shields.io/badge/Dev%20GSM%20directement%20en%20ligne%20sur%20Github%20!-blue.svg" alt="CodeSpace link" /></a>
 
-## 👉 Dans ces 2 derniers cas, en *CLI* (***C***ommand ***L***ine ***I***nterface = Console)
+## 👉👉 Dans ces 2 derniers cas, en *CLI* (***C***ommand ***L***ine ***I***nterface = Console)
 
-Dans le dossier :
+Dans le dossier du projet :
 
 ```bash
 ./go
 ```
-
 
 ## 🐳 App in Docker (local)
 
@@ -134,7 +133,7 @@ Pour **contribuer** au dev de ce projet (Et **en connaître tous les rouages et 
 
 ### * En ligne - Sans rien installer
 
-Dans le page du dépôt (Original, ou de votre fork), appuyer sur ' , ' et générer un codespace.
+Dans le page du dépôt ***GH*** (***G***it***H***ub) original, ou celle de votre fork, appuyer sur ' , ' et générer ainsi un codespace.
 
 Et dans le terminal qui apparaît enfin, faire comme en local 😉
 
