@@ -42,7 +42,16 @@ Tu ❤️ Python...? Rejoins le chat en LIVE !
   </a>
 </div>
 
-### 👉 Et sinon, direct en ligne : [gsm.COTE7.com](http://gsm.Cote7.com)
+### 👉 Direct en ligne : [gsm.COTE7.com](http://gsm.Cote7.com)
+
+### 👉 Et sinon, en local (macOS/Linux/Windows) après le *[fork](doc/0101_GIT_FORK.md)*
+
+En *CLI* (**C**ommande **L**ine **I**nterface = Console) :
+
+
+```bash
+./go
+```
 
 ## 🐳 App in Docker (local)
 
@@ -53,7 +62,7 @@ Pour lancer l'app localement avec Docker Compose :
 docker compose up -d --build
 ```
 
-Le mode auto-reload est actif en local Docker (watchfiles sur `src/`).
+Le mode auto-reload est aussi actif en local Docker (watchfiles sur `src/`).
 Quand tu modifies une vue Python, le process redémarre automatiquement.
 Si le navigateur ne se reconnecte pas tout de suite, fais un refresh de la page.
 
