@@ -44,14 +44,17 @@ Tu ❤️ Python...? Rejoins le chat en LIVE !
 
 ### 👉 Direct en ligne : [gsm.COTE7.com](http://gsm.Cote7.com)
 
-### 👉 Et sinon, en local (macOS/Linux/Windows) après le *[fork](doc/0101_GIT_FORK.md)*
+### 👉 En local (macOS/Linux/Windows) après le *[fork](doc/0101_GIT_FORK.md)*
+
+#### Le mode idéal aussi pour coder avec le projet
 
 En *CLI* (**C**ommande **L**ine **I**nterface = Console) :
-
 
 ```bash
 ./go
 ```
+
+### 👉 Et encore + simple et sans rien installer : Codespace → <a href="https://codespaces.new/GrCOTE7/gsm" title="Open YOUR CodeSpace Now... Click HERE!"><img src="https://img.shields.io/badge/Dev%20GSM%20directement%20en%20ligne%20sur%20Github%20!-blue.svg" alt="CodeSpace link" /></a>
 
 ## 🐳 App in Docker (local)
 
@@ -126,7 +129,9 @@ Pour **contribuer** au dev de ce projet (Et **en connaître tous les rouages et 
 
 Dans le page du dépôt (Original, ou de votre fork), appuyer sur ' , ' et générer un codespace.
 
-Et dans le terminal qui apparaît enfin :
+Et dans le terminal qui apparaît enfin, faire comme en local 😉
+
+### * Local - Desktop
 
 ```bash
 ./go
@@ -134,7 +139,7 @@ Et dans le terminal qui apparaît enfin :
 
 NB : Dans un codespace, seule la version Flet Web fonctionne (Avec l'option 'w'), et attention, pas de refresh, hotreload, etc... Bref, ne sert qu'à partager un rendu, voire éditer du code, ou éventuellement coder / modifier un script très simple...
 
-### * Local - Win OS
+### * Local - Web OS
 
 Éxécuter :
 
