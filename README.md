@@ -44,6 +44,8 @@ Tu ❤️ Python...? Rejoins le chat en LIVE !
 
 ### 👉 Direct en ligne : [gsm.COTE7.com](http://gsm.Cote7.com)
 
+---
+
 ### 👉 En local (macOS/Linux/Windows) après le *[fork](doc/0101_GIT_FORK.md)*
 
 #### C'est aussi le mode idéal pour coder avec le projet (Hotreload et positionnement de l'App AUTO)
