@@ -54,7 +54,7 @@ En *CLI* (**C**ommande **L**ine **I**nterface = Console) :
 ./go
 ```
 
-### 👉 Et encore + simple et sans rien installer : Codespace → <a href="https://codespaces.new/GrCOTE7/gsm" title="Open YOUR CodeSpace Now... Click HERE!"><img src="https://img.shields.io/badge/Dev%20GSM%20directement%20en%20ligne%20sur%20Github%20!-blue.svg" alt="CodeSpace link" /></a>
+### 👉 Et encore + simple et sans rien installer : Codespace → <a href="https://codespaces.new/GrCOTE7/gsm" title="Open YOUR CodeSpace Now... CTRL + Click HERE!"><img src="https://img.shields.io/badge/Dev%20GSM%20directement%20en%20ligne%20sur%20Github%20!-blue.svg" alt="CodeSpace link" /></a>
 
 ## 🐳 App in Docker (local)
 
